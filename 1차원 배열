@@ -1,0 +1,112 @@
+///
+Araays.toString(1차원배열) ->  배열값 출력 정적 메서드 
+ex) System.out.println(Array.toString(new int[]{1,2,3}); //[1,2,3]
+    System.out.println(Arrays.toString(a); //[1,2,3,...,99]
+///
+for-each 구문:
+for (원소자료형 변수: 묶음 참조자료형){
+  집합객체 원소의 자료형 
+}
+ex)
+int[] a= new int[100];
+a[0]=1, a[1]=2,...,a[99]=100;
+for (int k : a){
+  System.oy.println(k)
+}
+///
+###실습: ValueAssignment.java
+ #1. 배열의 원소값 대입 방법1
+ int[] array1 = new int[3];
+ array1[0] = 3;
+ array1[1] = 4;
+ array1[2] = 5;
+ System.out.println(array1[0] + " "+array1[1] + " "+array1[2]);
+ 
+ int[] array2;
+ array2 = new int[3];
+ array2[0] = 3;
+ array2[1] = 4;
+ array2[2] = 5;
+ System.out.println(array2[0] + " "+array2[1] + " "+array2[2]);
+ 
+#2. 배열의 원소값 대입 방법2
+int[] array3= new int[] {3,4,5};
+System.out.println(array3[0] + " "+array3[1] + " "+array3[2]);
+
+int[] array4;
+array4 = new int[] {3,4,5};
+System.out.println(array4[0] + " "+array4[1] + " "+array4[2]);
+
+#3. 배열의 원소값 대입 방법 3
+int[] array5 = {3,4,5};
+system.out.println(array5[0] + " "+array5[1] + " "+array5[2]);
+
+//int[] array5;
+//array6 = {3,4,5};//불가능
+//system.out.println(array6[0] + " "+array6[1] + " "+array6[2]);
+
+
+###initialValue.java
+#1. stack 메모리값(강제초기화 되지 않음)
+int value1;
+//system.out.println(value1);//오류
+int[] value2;
+//system.outprintln(value2);//오류
+
+int value3 =0;
+system.out.print(value3);//0
+int[] value4 = null;
+system.out.println(value4);//null
+
+#2. heap 메모리의 초기값(강제초기화)
+@기본자료형 배열
+boolean[] array1= new boolean[3];//false로 초기화
+for (int=0; i<3; i++){
+  system.out.println(array1[i]+ " ");//false false false
+}
+system.out.println()
+
+int[] array2= new int[3];//0오 초기화
+for (int=0; i<3; i++){
+  system.out.println(array2[i]+ " ");//0 0 0
+}
+system.out.println()
+
+double[] array3= new double[3];//0.0로 초기화
+for (int=0; i<3; i++){
+  system.out.println(array2[i]+ " ");//0.0 0.0 0.0
+}
+system.out.println()
+
+@참조자료형 배열
+
+String[] array4= new String[3];//null로 초기화
+for (int=0; i<3; i++){
+  system.out.println(array3[i]+ " ");//null null null
+}
+system.out.println()
+
+//Tip. 배열을 쉽게 출력할 수 있는 방법
+system.out.println(Arrays.toString(array1));//[false, false, false]
+system.out.println(Arrays.toString(array2));//[0, 0, 0]
+system.out.println(Arrays.toString(array3));//[0.0, 0.0, 0.0]
+system.out.println(Arrays.toString(array4));//[null, null, null]
+
+
+
+
+
+
+###PrimaryAndReferenceType.java
+#1. 기본자료형의 대입연산 (Stack 값 복사)
+int value1 = 3;
+int value2 = value2;
+value2 = 7;
+system.out.println(value1);//3
+system.out.println(value2);//7
+#2. 참조자료형의 대입연산 (Stack 값 복사)
+int[] array1 = new int[] {3,4,5}
+int[] array2 = array1;
+array2[0]=7;
+system.out.println(array1[0]);//7
+system.out.println(array2[0]);//7
